@@ -28,29 +28,30 @@ public class Perecedero extends Productos {
 		}
 	}
 
-	@Override
-	public String toString() {
-		String cad = super.toString();
-		
-		return cad;
-	}
+	
 	@Override
 	public double calcular(int cantidad) {
 
 		double precioCalculado = super.calcular(cantidad);
 		
-		if(caduca==1) {
-			precioCalculado/=4;
+		if(this.caduca==1) {
+			precioCalculado= precioCalculado/4;
 		}
-		if(caduca==2) {
-			precioCalculado/=3;
+		if(this.caduca==2) {
+			precioCalculado= precioCalculado/3;
 		}
-		if(caduca==3) {
-			precioCalculado/=2;
+		if(this.caduca==3) {
+			precioCalculado=precioCalculado/2;
 		}
 		
 
 		return precioCalculado;
 
+	}
+	@Override
+	public String toString() {
+		String cad = super.toString();
+		cad+= " -Dias a caducar: "+this.caduca;
+		return cad;
 	}
 }
